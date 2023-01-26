@@ -8,37 +8,46 @@
   <title>Accessible Me</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" id="top">
     <div class="site-header">
-      <h1>Jam Box Studios</h1>
-      <div class="main-nav">
+      <ul class="skip-links">
+        <li><a href="#main-nav">Skip to main nav</a></li>
+        <li><a href="#main-content">Skip to main content</a></li>
+      </ul>
+      <h1 role="heading">Jam Box Studios</h1>
+      <div role="navigation" class="main-nav" id="main-nav">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
+          <li class="navmenu"><a href="#" aria-label="Navigate to homepage">Home</a></li>
+          <li class="navmenu"><a href="#" aria-label="Navigate to products">Products</a></li>
+          <li class="navmenu"><a href="#" aria-label="Navigate to reservation">Reservation</a></li>
+          <li class="navmenu"><a href="#" aria-label="Navigate to studio">Studio</a></li>
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
+      <img role="img" src="https://placekitten.com/1200/900" alt="photo of a kitten" aria-details="kitten" class="banner">
     </div>
-    <div class="main-content">
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <div class="owner">
-        <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+    <div role="main" class="main-content" id="main-content">
+      <h1 role="heading">Welcome to Jam Box</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa
+        eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio
+        quia veritatis.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam
+        omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto
+        error voluptatibus.</p>
+      <div role="complementary" class="owner">
+        <h1 role="heading">Meet the owner</h1>
+        <ul itemscope itemtype="https://schema.org/Person">
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobtitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h1>Address</h1>
+        <h1 role="heading">Address</h1>
         <p>
           Jambox Studios
           123 Guitar Road,
@@ -47,20 +56,23 @@
         </p>
       </div>
       <div class="contact-section">
-        <h1>Contact Us</h1>
+        <h1 role="heading">Contact Us</h1>
         <form action="thanks.html">
           <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
+          <input type="text" placeholder="John Doe">
+          <label>Email</label>
+          <input type="text" placeholder="johndoe@example.ca">
+          <label>Subject</label>
           <input type="text" placeholder="Subject">
-          <b>Your Message</b>
-          <textarea></textarea>
-          <button type="submit">Send</button>
+          <label>Message</label>
+          <textarea placeholder="Your Message"></textarea>
+          <button aria-label="Submit contact information" type="submit">Send</button>
         </form>
       </div>
     </div>
     <div class="site-footer">
       &copy; 2021 Jam Box Studios
+      <a class="top" href="#top">Back to Top</a>
     </div>
   </div>
 </body>
